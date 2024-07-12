@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../fontawesome-free-5.15.4-web/css/all.css">
+    <script src="https://kit.fontawesome.com/f90068558c.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+
+    <style>
+        body {
+            font-family: "Anton", sans-serif;
+            font-family: "Cairo", sans-serif;
+            font-family: "Work Sans", sans-serif;
+            margin: 0%;
+        }
+        .contact-container {
+            display: flex;
+            justify-content: left ;
+        }
+
+        .side-img {
+            margin: 0;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin: 10px 40px;
+            display: inline-block;
+        }
+
+        /* form style */
+
+        .form-container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .input-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .icon {
+            margin-right: 6px;
+        }
+        .fa-user, .fa-map-marker-alt, .fa-envelope-open, .facomment{
+            font-size: 27px;
+        }
+    
+        .form-input {
+            position: relative;
+            width: 100%;
+            border-bottom: 1px solid grey;
+            outline:none;
+            height: 48px;
+            margin-bottom: 15px;
+            padding: 0;
+        }
+
+        .form-label {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+        }
+
+        .input-item {
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-style: none;
+            outline: none;
+            background-color: transparent;
+            padding: 0;
+            margin: 0;
+            font-size: 15px;
+            height: 100%;
+        }
+
+
+        .textarea-container {
+            display: flex;
+            justify-content: center;
+        }
+        .form-textarea {
+            position: relative;
+        }
+        .textarea {
+            border-style: none;
+            border-bottom: 1px solid grey;
+            outline: none;
+            margin-top: 10px;
+        }
+
+        .submit {
+            border-style: none;
+            border-radius: 25px;
+            color: aliceblue;
+            background-color: #4e47c3;
+            margin: 10px;
+            cursor: pointer;
+            padding: 15px 50px;
+            font-weight: bold;
+        }
+
+        .input-item:focus + .form-label {
+            top: -5px;
+            left: -2px;
+            font-size: 10px;
+        }
+
+        .textarea:focus + .form-label {
+            top: -5px;
+            left: -2px;
+            font-size: 10px;
+        }
+
+        .input-item:not(:placeholder-shown).input-item:not(:focus) + .form-label {
+            top: -2px;
+            left: -2px;
+            font-size: 10px;
+            color: rgb(138, 130, 130);
+        }
+
+        textarea:not(:placeholder-shown).textarea:not(:focus) + .form-label {
+            top: -2px;
+            left: -2px;
+            font-size: 10px;
+            color: rgb(138, 130, 130);
+        }
+
+        .modal-container {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.411);
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 1s, opacity 1s;
+        }
+
+        .show {
+            visibility: visible;
+            opacity: 1;
+            }
+
+        .modal {
+            width: 600px;
+            height: 400px;
+            position: relative;
+            background-color: white;
+            padding: 35px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .modal img {
+            display: block;
+            margin: 0 auto 0 auto;
+            padding: 0;
+            width: 300px;
+        }
+
+        .modal h3 {
+            margin: 0;
+            padding: 0;
+            font-size: 30px;
+        }
+
+        .modal p {
+            margin: 20px 0;
+            padding: 0;
+            font-size: 15px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+
+
+    <div class="contact-container">
+        <div class="contact-img">
+            <img src="imgs/phone.png" alt="side img" class="side-img" width="800px">
+        </div>
+
+        <div class="contact-info">
+            <img src="imgs/profile.png" alt="" class="profile-img" width="200px">
+            <h1>Contact me</h1>
+            <p>Please feel free to contact me</p>
+            <h4> Add your Info</h4>
+
+            <!-- contact form  -->
+        <form action="https://formsubmit.io/send/anan.soliman95@gmail.com" autocomplete="off" method="post"> <!--mailto:ananke.moon@hotmail.com-->
+            <!-- https://formsubmit.io/send/anan.soliman95@gmail.com -->
+            <div class="form-container">
+                <!-- Input Name Column -->
+                    <div class="input-container">
+                        <div class="icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+
+                        <div class="form-input">
+                            <input class="input-item" type="text"name="name" id="name" placeholder=" ">
+                            <label for="name" class="form-label"> Name </label>
+                        </div>
+                    </div>
+
+                <!-- Input City Column -->
+                    <div class="input-container">
+                        <div class="icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+
+                    <div class="form-input">
+                        <input class="input-item" type="text"name="city" id="city" placeholder=" ">
+                        <label for="city" class="form-label">City</label>
+                        </div>
+                    </div>
+
+                <!-- Input Email Column -->
+                    <div class="input-container">
+                        <div class="icon">
+                            <i class="far fa-envelope-open"></i>
+                        </div>
+
+                        <div class="form-input">
+                            <input class="input-item" type="text" name="email" id="email" placeholder=" ">
+                            <label for="email" class="form-label">Email</label>
+                        </div>
+                    </div>
+
+                <!-- Input Message Column -->
+                    <div class="textarea-container">
+                        <div class="icon">
+                            <i class="fas fa-comment"></i>
+                        </div>
+
+                        <div class="form-textarea">
+                            <textarea class="textarea" type="text" name="message" id="message" cols="52"rows="8" placeholder=" "></textarea>
+                            <label for="message" class="form-label">Message</label>
+                        </div>
+                    </div>
+
+        </div>
+            
+        <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" class="next">
+            <!-- submit button -->
+            <button type="submit" value="submit" class="submit"> Submit</button>
+            
+    </form>
+
+                </div>
+    </div>
+
+    <div class="modal-container">
+        <div class="modal">
+            <img src="/imgs/rocket.png" alt="">
+            <h3> Message Sent </h3>
+            <p> Thank you for submitting ! </p>
+        </div>
+    </div>
+
+    <script src="final.js"></script>
+    <script>
+        if (btnSubmit) {
+    btnSubmit.addEventListener("click", function () {
+        modal.classList.add("show");
+        
+        // const next = document.querySelector(".next");
+        // next.setAttribute("value", "http://127.0.0.1:5500/contact.html");
+    })
+}
+    </script>
+</body>
+</html>
